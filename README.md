@@ -21,13 +21,13 @@ Before you begin, ensure you have met the following requirements:
 1. Clone this repository:
 
    ```
-   git clone https://github.com/Galkurta/FreeDogs-BOT.git
+   git clone https://github.com/Galkurta/FreeDog-BOT.git
    ```
 
 2. Navigate to the project directory:
 
    ```
-   cd FreeDogs-BOT
+   cd FreeDog-BOT
    ```
 
 3. Install the required dependencies:
