@@ -14,7 +14,7 @@ FreeDogs is a Node.js application that interacts with the FreeDogs bot API. It a
 Before you begin, ensure you have met the following requirements:
 
 - Node.js (v12 or higher) installed on your machine
-- A FreeDogs bot account (Register here: [https://t.me/theFreeDogs_bot/app?startapp=ref_k4UaSZgv](https://t.me/theFreeDogs_bot/app?startapp=ref_k4UaSZgv))
+- A FreeDogs bot account [Register here](https://t.me/theFreeDogs_bot/app?startapp=ref_k4UaSZgv)
 
 ## Installation
 
