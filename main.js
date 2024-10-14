@@ -44,6 +44,7 @@ class FreeDogs {
       "User-Agent":
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
     };
+    this.maxed = [];
   }
 
   async countdown(seconds) {
@@ -120,6 +121,13 @@ class FreeDogs {
         logger.info(
           `Number of clicks today: ${data.userToDayNowClick}/${data.userToDayMaxClick}`
         );
+        if (data.userToDayNowClick === data.userToDayMaxClick) {
+          this.maxed.push("max");
+          return {
+            success: false,
+            error: "You have reached the maximum number of clicks today",
+          };
+        }
         return { success: true, data: data };
       } else {
         return { success: false, error: response.data.msg };
@@ -289,7 +297,12 @@ class FreeDogs {
 
         await new Promise((resolve) => setTimeout(resolve, 1000));
       }
-      await this.countdown(60);
+      if (this.maxed.length == data.length) {
+        console.log("all daily left over!");
+        break;
+      } else {
+        await this.countdown(180);
+      }
     }
   }
 }
