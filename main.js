@@ -245,7 +245,14 @@ class FreeDogs {
       .readFileSync(dataFile, "utf8")
       .replace(/\r/g, "")
       .split("\n")
-      .filter(Boolean);
+      .filter(Boolean)
+      .map((v) => {
+        let match = v.match(/tgwebappdata\=(.*?)(?=")/is);
+        if (match) {
+          return decodeURIComponent(match[1]);
+        }
+        return v;
+      });
     while (true) {
       for (let i = 0; i < data.length; i++) {
         const rawInitData = data[i];
